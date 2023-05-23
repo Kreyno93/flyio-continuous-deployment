@@ -17,6 +17,7 @@ public class CarController {
 
     @PostMapping()
     public Car addCar(@RequestBody Car car) {
+        System.out.println(car);
         return carService.saveCar(car);
     }
 
