@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping
-@RestController("/api/cars")
+@RestController
+@RequestMapping("/api/cars")
 public class CarController {
 
     private final CarService carService;
