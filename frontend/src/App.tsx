@@ -5,7 +5,7 @@ import {Route, Routes} from "react-router-dom";
 import Homepage from "./components/Homepage";
 import CarGallery from "./components/CarGallery";
 
- export type Car = {
+export type Car = {
     id: string,
     brand: string,
     model: string,
@@ -22,7 +22,6 @@ function App() {
     }
 
     useEffect(getData, [])
-
 
     return (
         <div className="App">

@@ -55,5 +55,5 @@ jobs:
         with:
           name: app.jar
           path: backend/target
-      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - uses: superfly/flyctl-actions/setup-flyctl@main
       - run: flyctl deploy

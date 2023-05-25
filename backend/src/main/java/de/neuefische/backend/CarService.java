@@ -3,6 +3,7 @@ package de.neuefische.backend;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class CarService {
@@ -13,8 +14,8 @@ public class CarService {
         this.carRepo = carRepo;
     }
 
-    public Car saveCar(Car car) {
-        return carRepo.save(car);
+    public Car saveCar(CarDTO car) {
+        return carRepo.save(new Car(UUID.randomUUID().toString(), car.brand(), car.model()));
     }
 
     public List<Car> findAllCars() {
