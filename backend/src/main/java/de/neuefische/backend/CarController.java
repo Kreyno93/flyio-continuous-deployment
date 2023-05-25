@@ -1,28 +1,28 @@
 package de.neuefische.backend;
 
-
-import org.springframework.web.bind.annotation.*;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.service.annotation.PostExchange;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/cars")
+@RequiredArgsConstructor
 public class CarController {
 
     private final CarService carService;
 
-    public CarController(CarService carService) {
-        this.carService = carService;
-    }
-
-    @PostMapping()
-    public Car addCar(@RequestBody Car car) {
-        return carService.saveCar(car);
-    }
-
-    @GetMapping()
-    public List<Car> findAllCars() {
+    @GetMapping
+    List<Car> findAllCars(){
         return carService.findAllCars();
     }
 
+    @PostMapping
+    Car saveCar(Car car){
+        return carService.saveCar(car);
+    }
 }
